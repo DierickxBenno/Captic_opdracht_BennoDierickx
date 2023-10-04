@@ -1,7 +1,7 @@
 # ignore pictures directory, unzip pictures.zip as pictures
 /data/pictures/*
 # ignore config file for python virtual environment, to avoid conflict
-pyenv.cfg
+pyvenv.cfg
 /Scripts
 
 Include
