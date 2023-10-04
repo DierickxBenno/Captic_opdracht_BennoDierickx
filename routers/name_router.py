@@ -11,7 +11,7 @@ for path in paths_to_modules:
 
 from metadata.jsonify import JSONify
 
-converter = JSONify("./data/pictures/")
+converter = JSONify()
 
 
 def get_image(name):
@@ -42,8 +42,13 @@ def get_image_by_name(name: str):
 @router.get("/")
 def get_all_images():
 	# images = []
-	names = get_all_image_names()
-	if len(names) == 0:
-		raise HTTPException(status_code=404, detail="No images found")
+	# names = get_all_image_names()
+	# if len(names) == 0:
+	# 	raise HTTPException(status_code=404, detail="No images found")
+	# read and return images.json
+	with open("./metadata/images.json", "r") as infile:
+		images = json.load(infile)
+	
+	return images
 
-	return names
+	# return names

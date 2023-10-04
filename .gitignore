@@ -1,6 +1,12 @@
 # ignore pictures directory, unzip pictures.zip as pictures
 /data/pictures/*
-Config.py
+# ignore config file for python virtual environment, to avoid conflict
+pyenv.cfg
+/Scripts
+
+Include
+
+
 #
 #
 # TEMPLATE
