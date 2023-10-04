@@ -1,24 +1,28 @@
+# create fast api app
+paths_to_modules = ["./metadata", "./routers"]
+
+from fastapi import FastAPI, APIRouter
 import json
-import cv2
+import sys
 
-pic_path = ""
+for path in paths_to_modules:
+    if path not in sys.path:
+        sys.path.append(path)
 
-def JSONify_picture(name):
-	#set size for resize, 2**x to easily chage size
-	size = 2**7
-	# fetch picture from path
-	pic = cv2.imread(f"./data/pictures/{name}.jpg")
-	split_name = name.split("_")
-	kind = split_name[0]
-	# resize picture
-	resized_pic = cv2.resize(pic, (size, size))
-	metadata = {"kind": kind, "picture": resized_pic.tolist()}
-	return metadata
+import name_router as name
 
-# avoid unwanted execution when imported
-if __name__ == "__main__":
-	image_meta = JSONify_picture()
-	print(image_meta["kind"])
-	print(len(image_meta["picture"]))
+app = FastAPI()
+app.include_router(name.router)
 
- 
+
+
+def status_code(p_code):
+    return {"status code": p_code}
+
+
+@app.get("/")
+async def root():
+    return " Go to: http://localhost:8000/docs "
+
+
+

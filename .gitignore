@@ -1,5 +1,6 @@
 # ignore pictures directory, unzip pictures.zip as pictures
 /data/pictures/*
+Config.py
 #
 #
 # TEMPLATE
