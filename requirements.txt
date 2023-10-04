@@ -1,0 +1,6 @@
+opencv-python==4.7.0.72
+fastapi
+jsonpickle==3.0.1
+fastapi==0.103.2
+python-dotenv
+PyMySQL
