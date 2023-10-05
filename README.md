@@ -1,7 +1,7 @@
 # Captic_opdracht_BennoDierickx
 
 ### In this project i have to make a dockerized environement to get metadata from pictures.
-=======
+
 In this project I have to make a dockerized environement to get metadata from pictures.
 
 ## test code
