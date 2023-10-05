@@ -1,4 +1,7 @@
 # from PIL import Image # can be useful when working with Images
+import sys
+sys.path.append("/usr/lib/python3.11/site-packages/") # hard coded solution 
+
 import json
 import cv2
 import glob
@@ -51,7 +54,7 @@ class JSONify:
 			json.dump(data, outfile)
 
 
-if __name__ == "__main__":
-	converter = JSONify()
-	if len(converter.names) == 0:
-		print("No images found, please check path")
+# if __name__ == "__main__":
+# 	converter = JSONify()
+# 	if len(converter.names) == 0:
+# 		print("No images found, please check path")
