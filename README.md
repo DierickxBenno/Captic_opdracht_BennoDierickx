@@ -3,4 +3,3 @@ In this project i have to make a dockerized environement to get metadata from pi
 
 ### you can unzip ``` pictures_minimised.zip ``` to ```pictures``` to get some images 
 
-### to ru
