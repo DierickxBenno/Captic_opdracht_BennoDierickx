@@ -1,5 +1,6 @@
 # create fast api app
-paths_to_modules = ["./metadata", "./routers"]
+# paths_to_modules = ["./metadata", "./routers"] # local deployment
+paths_to_modules = ["/app/metadata", "/app/routers"]  # docker version
 
 from fastapi import FastAPI, APIRouter
 import json
@@ -9,11 +10,11 @@ for path in paths_to_modules:
     if path not in sys.path:
         sys.path.append(path)
 
+
 import name_router as name
 
 app = FastAPI()
 app.include_router(name.router)
-
 
 
 def status_code(p_code):

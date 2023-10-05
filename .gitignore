@@ -1,5 +1,6 @@
 # ignore pictures directory, unzip pictures.zip as pictures
 /data/pictures/*
+/metadata/images.json # bigfile, not user friendly to add to github
 # ignore config file for python virtual environment, to avoid conflict
 pyvenv.cfg
 /Scripts
