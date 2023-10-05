@@ -5,12 +5,6 @@ WORKDIR '/app'
 
 RUN apk add --no-cache linux-headers g++
 
-# RUN apk --no-cache add g++ opencv
-
-# RUN apk --no-cache add g++ py3-opencv
-
-# RUN apk info py3-opencv
-
 COPY ./requirements.txt ./
 
 RUN pip wheel --wheel-dir=/root/wheels -r requirements.txt
@@ -38,5 +32,4 @@ RUN addgroup -S uwsgi && adduser -S uwsgi -G uwsgi
 
 USER uwsgi
 
-#CMD ["uwsgi", "--ini", "app.ini"]
 CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
