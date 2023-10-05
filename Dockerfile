@@ -38,4 +38,5 @@ RUN addgroup -S uwsgi && adduser -S uwsgi -G uwsgi
 
 USER uwsgi
 
-CMD ["uwsgi", "--ini", "app.ini"]
+#CMD ["uwsgi", "--ini", "app.ini"]
+CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]

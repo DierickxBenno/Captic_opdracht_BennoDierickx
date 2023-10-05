@@ -10,7 +10,7 @@ for path in paths_to_modules:
         sys.path.append(path)
 
 
-print(sys.path)
+
 import name_router as name
 
 app = FastAPI()
@@ -24,3 +24,8 @@ def status_code(p_code):
 @app.get("/")
 async def root():
     return " Go to: http://localhost:8000/docs "
+
+
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8000)
