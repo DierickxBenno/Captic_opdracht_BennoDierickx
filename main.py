@@ -26,6 +26,3 @@ async def root():
     return " Go to: http://localhost:8000/docs "
 
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
