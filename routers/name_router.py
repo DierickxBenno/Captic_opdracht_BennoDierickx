@@ -1,4 +1,6 @@
-paths_to_modules = ["../metadata"]
+# paths_to_modules = ["../metadata"] #local deployment
+paths_to_modules = ["/app/metadata"] #docker version
+
 from fastapi import APIRouter, HTTPException
 import json
 import sys
@@ -11,7 +13,8 @@ for path in paths_to_modules:
 
 from metadata.jsonify import JSONify
 
-converter = JSONify()
+# converter = JSONify() # local deployment
+converter = JSONify("/app/data/pictures/")  # docker version
 
 
 def get_image(name):

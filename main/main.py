@@ -1,5 +1,6 @@
 # create fast api app
-paths_to_modules = ["./metadata", "./routers"]
+# paths_to_modules = ["./metadata", "./routers"] # local deployment
+paths_to_modules = ["/app/metadata", "/app/routers"] # docker version
 
 from fastapi import FastAPI, APIRouter
 import json
