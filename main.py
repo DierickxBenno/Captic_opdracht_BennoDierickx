@@ -25,4 +25,3 @@ async def root():
     return " Go to: http://localhost:8000/docs "
 
 
-
