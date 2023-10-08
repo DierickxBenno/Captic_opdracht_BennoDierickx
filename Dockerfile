@@ -20,16 +20,10 @@ COPY --from=build-image /root/wheels /root/wheels
 
 COPY --from=build-image /app/requirements.txt ./
 
-RUN apk --no-cache add opencv
-
 RUN apk --no-cache add py3-opencv
 
 RUN pip install --no-index --find-links=/root/wheels -r requirements.txt
 
 COPY ./ ./
-
-RUN addgroup -S uwsgi && adduser -S uwsgi -G uwsgi
-
-USER uwsgi
 
 CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
